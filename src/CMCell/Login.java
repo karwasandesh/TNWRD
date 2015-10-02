@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-import mx4j.log.Log;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -25,7 +23,7 @@ import Data.Links;
 public class Login  {
  
 	WebDriver driver ;
-	Log logfile;
+	
 	
 
 	@BeforeMethod
