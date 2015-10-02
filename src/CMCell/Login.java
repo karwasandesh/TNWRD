@@ -49,10 +49,10 @@ public class Login  {
 	@Test
 	public void TestCaseNo002(){
 			driver.findElement(By.className("button")).click();
-			String Expected = "The Following Errors Occurred:\nusername was empty reenter\npassword was empty reenter";	
+			String Expected = "password was empty reenter";	
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			String Actual = driver.findElement(By.className("content-messages errorMessage")).getText();
-			
+			String Actual = driver.findElement(By.xpath("/html/body/div[1]/div[4]/p[1]")).getText();
+			System.out.println(Actual);
 			Assert.assertEquals(Actual, Expected);
 	}
 	
@@ -60,9 +60,9 @@ public class Login  {
 	public void TestCaseNo003(){
 			driver.findElement(By.id("loginId")).sendKeys("username");
 			driver.findElement(By.className("button")).click();
-			String Expected = "The Following Errors Occurred:\npassword was empty reenter";
+			String Expected = "password was empty reenter";
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			String Actual = driver.findElement(By.className("content-messages errorMessage")).getText();//driver.findElement(By.id("messages-container")).getText();
+			String Actual = driver.findElement(By.xpath("/html/body/div[1]/div[4]/p[2]")).getText();//driver.findElement(By.id("messages-container")).getText();
 			Assert.assertEquals(Actual, Expected);
 		}
 	
@@ -70,8 +70,8 @@ public class Login  {
 	public void TestCaseNo004(){
 			driver.findElement(By.id("LoginSubmit_password")).sendKeys("password");
 			driver.findElement(By.className("button")).click();
-			String Expected = "The Following Errors Occurred:\nusername was empty reenter";		
-			String Actual = driver.findElement(By.className("content-messages errorMessage")).getText();
+			String Expected = "username was empty reenter";		
+			String Actual = driver.findElement(By.xpath("/html/body/div[1]/div[4]/p[2]")).getText();
 			Assert.assertEquals(Actual, Expected);
 	}
 	

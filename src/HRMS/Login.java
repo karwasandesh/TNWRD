@@ -34,6 +34,7 @@ public class Login  {
 		driver.get(Links.BaseUrl+Links.CMCellURL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		driver.findElement(By.id("loginId")).clear();
 		driver.findElement(By.id("LoginSubmit_password")).clear();
 	}
@@ -62,7 +63,7 @@ public class Login  {
 			driver.findElement(By.className("button")).click();
 			String Expected = "The Following Errors Occurred:\npassword was empty reenter";
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			String Actual = driver.findElement(By.className("content-messages errorMessage")).getText();//driver.findElement(By.id("messages-container")).getText();
+			String Actual = driver.findElement(By.xpath("/html/body/div[1]/div[4]")).getText();//driver.findElement(By.id("messages-container")).getText();
 			Assert.assertEquals(Actual, Expected);
 		}
 	
@@ -71,7 +72,7 @@ public class Login  {
 			driver.findElement(By.id("LoginSubmit_password")).sendKeys("password");
 			driver.findElement(By.className("button")).click();
 			String Expected = "The Following Errors Occurred:\nusername was empty reenter";		
-			String Actual = driver.findElement(By.className("content-messages errorMessage")).getText();
+			String Actual = driver.findElement(By.xpath("/html/body/div[1]/div[4]")).getText();
 			Assert.assertEquals(Actual, Expected);
 	}
 	
@@ -83,7 +84,7 @@ public class Login  {
 			driver.findElement(By.id("LoginSubmit_password")).sendKeys("Pass");
 			driver.findElement(By.className("button")).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			Assert.assertEquals(driver.findElement(By.className("content-messages errorMessage")).getText(), expectedError);
+			Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[1]/div[4]")).getText(), expectedError);
 			
 	}
 	
@@ -94,7 +95,7 @@ public class Login  {
 		driver.findElement(By.id("LoginSubmit_password")).sendKeys("password");
 		driver.findElement(By.className("button")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Assert.assertEquals(driver.findElement(By.className("content-messages errorMessage")).getText(), expectedError);
+		Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[1]/div[4]")).getText(), expectedError);
 	}
 	
 	@Test
@@ -104,7 +105,7 @@ public class Login  {
 		driver.findElement(By.id("LoginSubmit_password")).sendKeys("Pass");
 		driver.findElement(By.className("button")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Assert.assertEquals(driver.findElement(By.className("content-messages errorMessage")).getText(), expectedError);
+		Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[1]/div[4]")).getText(), expectedError);
 			
 	}
 	
