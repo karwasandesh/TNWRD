@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CMSuite">
+
+  <test name="Login">
+    <classes>
+       <class name="CMCell.Login" />
+    </classes>
+  </test>
+  
+  <test name="Petition Details">
+    <classes>
+       <class name="CMCell.Petition_Details" />
+    </classes>
+  </test>
+  
+   <test name="BeforeSuite">
+    <classes>
+       <class name="CMCell.CMCellSuite" />
+    </classes>
+  </test>
+  
+</suite>

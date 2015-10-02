@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CMSuite]">
+  <test name="Login(failed)">
+    <classes>
+      <class name="CMCell.Login">
+        <methods>
+          <include name="TestCaseNo006"/>
+          <include name="TestCaseNo007"/>
+          <include name="catchExceptions"/>
+          <include name="TestCaseNo004"/>
+          <include name="beforeClass"/>
+          <include name="TestCaseNo005"/>
+          <include name="beforeMethod"/>
+          <include name="TestCaseNo002"/>
+          <include name="TestCaseNo003"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- CMCell.Login -->
+      <class name="CMCell.CMCellSuite">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- CMCell.CMCellSuite -->
+      <class name="CMCell.Petition_Details">
+        <methods>
+          <include name="login"/>
+          <include name="catchExceptions"/>
+        </methods>
+      </class> <!-- CMCell.Petition_Details -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test name="Petition Details(failed)">
+    <classes>
+      <class name="CMCell.Login">
+        <methods>
+          <include name="catchExceptions"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- CMCell.Login -->
+      <class name="CMCell.CMCellSuite">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- CMCell.CMCellSuite -->
+      <class name="CMCell.Petition_Details">
+        <methods>
+          <include name="login"/>
+          <include name="catchExceptions"/>
+          <include name="testCaseNo001"/>
+        </methods>
+      </class> <!-- CMCell.Petition_Details -->
+    </classes>
+  </test> <!-- Petition Details(failed) -->
+</suite> <!-- Failed suite [CMSuite] -->
